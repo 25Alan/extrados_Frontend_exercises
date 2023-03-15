@@ -29,54 +29,40 @@ function createCardboard(check, numberTable, namePlayer = "Player") {
   const caption = document.createElement("caption");
   const tbody = document.createElement("tbody");
 
-  table.setAttribute(
-    "class",
-    "table table-bordered border-info text-dark fw-bold"
-  );
-  caption.setAttribute("class", "bg-transparent text-center");
+  table.classList.add('table', 'table-bordered', 'border-info', 'text-dark', 'fw-bold');
+  caption.classList.add('bg-transparent', 'text-center');
   caption.textContent = namePlayer;
-  tbody.setAttribute("class", "text-center");
+  tbody.classList.add('text-center');
 
-  if (check === "noCheck") {
-    completeNumbers();
+  function createRowsColumns(rows, cols, value) {
     let count = 0;
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < rows; i++) {
       const tr = document.createElement("tr");
-      for (let j = 0; j < 5; j++) {
+      for (let j = 0; j < cols; j++) {
         const td = document.createElement("td");
-        td.textContent = `${numbersRandomPlayers[count]}`;
+        td.textContent = value[count] !== undefined ? value[count] : "";
         count++;
         tr.appendChild(td);
-        tbody.appendChild(tr);
       }
+      tbody.appendChild(tr);
     }
+  }
+  if (check === "noCheck") {
+    completeNumbers();
+    createRowsColumns(3, 5, numbersRandomPlayers);
     numbersRandomPlayers = [];
-    table.appendChild(caption);
     table.setAttribute('id', `table${numberTable}`);
+    table.appendChild(caption);
     table.appendChild(tbody);
     containerPlayers.appendChild(table);
-  }
-  if (check === "Check") {
-    let count2 = 0;
-    for (let i = 0; i < 6; i++) {
-      const tr = document.createElement("tr");
-      for (let j = 0; j < 15; j++) {
-        const td = document.createElement("td");
-        if (numbersGenerated[count2] === undefined) {
-          td.textContent = ``;
-        } else {
-          td.textContent = `${numbersGenerated[count2]}`;
-        }
-        count2++;
-        tr.appendChild(td);
-        tbody.appendChild(tr);
-      }
-    }
+  } else if (check === "Check") {
+    createRowsColumns(6, 15, numbersGenerated);
     table.appendChild(caption);
     table.appendChild(tbody);
     containerInfo.appendChild(table);
   }
 }
+
 
 function createXtimes(numbersPlayers = 2) {
   for (let i = 0; i < numbersPlayers; i++) {
@@ -86,17 +72,17 @@ function createXtimes(numbersPlayers = 2) {
 
 function checkCardboard(number) {
   const tdAll = document.querySelectorAll('td');
-  tdAll.forEach(td => {
-    if(td.textContent === number) td.style.backgroundColor = 'rgb(255, 255, 255)';
-  });
+  for(let i = 0; i < tdAll.length; i++){
+    if(tdAll[i].textContent === number) tdAll[i].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
 }
 
 function checkWinner(numberTable) {
-  const tdAll = document.querySelectorAll(`#table${numberTable} td`)
+  const tdAll = document.querySelectorAll(`#table${numberTable} td`);
   let countWhite = 0;
-  tdAll.forEach(td => {
-    if(td.style.backgroundColor === 'rgb(255, 255, 255)') countWhite++;
-  });
+  for(let i = 0; i < tdAll.length; i++) {
+    if(tdAll[i].style.backgroundColor === 'rgb(255, 255, 255)') countWhite++;
+  }
   return countWhite;
 }
 
@@ -107,7 +93,7 @@ function winner(string) {
   h1.textContent = string;
 }
 
-const numberRandom = () => { return Math.trunc(Math.random() * (90 - 1) + 1); };
+const numberRandom = () => { return Math.floor(Math.random() * 90) + 1; };
 const completeNumbers = () => {
   while (numbersRandomPlayers.length < 15) {
     let random = numberRandom();
@@ -116,4 +102,4 @@ const completeNumbers = () => {
     }
   }
 };
-const checkRepeated = (number) => { return numbersGenerated.indexOf(number) !== -1; };
+const checkRepeated = (number) => { return numbersGenerated.includes(number); };
