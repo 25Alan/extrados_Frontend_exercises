@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/styleFixed.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/configCss/normalize.css">
+    <link rel="icon" href="./image/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <title>FORM</title>
+</head>
+
+<body>
+    <header>
+        <div class="containerLogo">
+            <img src="./image/logoGoogle.svg" alt="logoGoogle" id="logoQuery_Log">
+        </div>
+        <nav class="containerNav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./html/query_log.html">Inquiries</a></li>
+                <li><a href="./html/contact.html">Contact Us</a></li>
+                <li id="checkDarkWhite">
+                    <label>
+                        <input type="checkbox" name="check">
+                        <span></span>
+                        <i class="fa-regular fa-moon"></i>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="containerForm">
+            <form>
+                <table>
+                    <tr>
+                        <td><a href="https://www.google.com" target="_blank"><img src="./image/logoGoogle.svg"
+                                    alt="Google" id="logo"></a>
+                        </td>
+                        <td id="h2Table">
+                            <h2>Inquiry Form</h2>
+                        </td>
+                    </tr>
+                </table>
+                <fieldset id="fieldset1">
+                    <label id="labelName">Name :<input type="text" id="inputName" class="inputNameSurname"
+                            required></label>
+                    <label id="labelSurname">Surname :<input type="text" id="inputSurname" class="inputNameSurname"
+                            required></label>
+                    <textarea id="textAreaInput" cols="30" rows="5" placeholder="Query" required></textarea>
+                </fieldset>
+                <fieldset id="fieldset2">
+                    <label><input type="radio" class="inputRadio" name="language" id="HTML"> HTML</label>
+                    <label><input type="radio" class="inputRadio" name="language" id="CSS"> CSS</label>
+                </fieldset>
+                <fieldset id="fieldset3">
+                    <select id="selectInput">
+                        <option value="0" selected disabled>--Please choose an option--</option>
+                        <option value="Morning">Turn morning</option>
+                        <option value="Night">Turn night</option>
+                    </select>
+                    <input type="hidden" id="inputHidden" value="#1">
+                    <button>SEND</button>
+                    <h2 id="messageEnv">ENVIADO</h2>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

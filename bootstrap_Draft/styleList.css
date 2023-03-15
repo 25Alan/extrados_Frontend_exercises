@@ -1,0 +1,16 @@
+img {
+  height: 12rem;
+}
+
+table {
+  background: #ffeeba !important;
+  border-color: #FFDF7E !important;
+}
+
+table tr th, table tr td {
+  border-color: #ffdf7e !important;
+}
+
+.border {
+  border: 1px solid #dee2e6!important;
+}

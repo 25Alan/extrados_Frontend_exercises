@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC', crossorigin='anonymous')
+    
+    title CALCULATOR
+
+  body.bg-dark
+    h1.text-white CALCULATOR
+    .d-flex.flex-column.mb-3
+      label.text-white
+        | OPERAND A
+        input#operandA.ms-2.d-block(type='number', placeholder='Enter first number', required='')
+      label.text-white
+        | OPERAND B
+        input#operandB.ms-2.d-block(type='number', placeholder='Enter second number', required='')
+    .btn-container.d-flex
+      button#buttonSum.btn.ms-2.btn-primary Sumar
+      button#buttonDif.btn.ms-2.btn-primary Restar
+      button#buttonMult.btn.ms-2.btn-primary Multiplicar
+      button#buttonDiv.btn.ms-2.btn-primary Dividir
+    div#result.text-white
+
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM', crossorigin='anonymous')
+    script(src='./javascript/calcBootstrap.js' defer)

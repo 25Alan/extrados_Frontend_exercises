@@ -1,0 +1,46 @@
+extends layout 
+
+block css-linkContent 
+  link(rel="stylesheet", href="css/style.css")
+  link(rel="stylesheet", href="css/styleFixed.css")
+  link(rel="stylesheet", href="css/configCss/normalize.css")
+
+block content
+  html
+  head
+  body
+    .containerForm
+      form
+        table
+          tbody
+            tr
+              td
+                a(href='https://www.google.com', target='_blank')
+                  img#logo(src='./images/logoGoogle.svg', alt='Google')
+              td#h2Table
+                h2 Inquiry Form
+        fieldset#fieldset1
+          label#labelName
+            | Name :
+            input#inputName.inputNameSurname(type='text', required='')
+          label#labelSurname
+            | Surname :
+            input#inputSurname.inputNameSurname(type='text', required='')
+          textarea#textAreaInput(cols='30', rows='5', placeholder='Query', required='')
+        fieldset#fieldset2
+          label
+            input#HTML.inputRadio(type='radio', name='language')
+            |  HTML
+          label
+            input#CSS.inputRadio(type='radio', name='language')
+            |  CSS
+        fieldset#fieldset3
+          select#selectInput
+            option(value='0', selected='', disabled='') --Please choose an option--
+            option(value='Morning') Turn morning
+            option(value='Night') Turn night
+          input#inputHidden(type='hidden', value='#1')
+          button SEND
+          h2#messageEnv ENVIADO
+
+    script(src="./javascript/script.js" defer) 

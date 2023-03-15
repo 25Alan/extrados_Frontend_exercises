@@ -1,0 +1,16 @@
+extends layout 
+
+block css-linkContent 
+  link(rel="stylesheet", href="css/styleFixed.css")
+  link(rel="stylesheet", href="css/styleQueryLog.css")
+  link(rel="stylesheet", href="css/configCss/normalize.css")
+
+block content 
+  html
+  head
+  body
+    section.containerList
+      input#searchI(type='text', placeholder='Search')
+      ul#boxList
+    
+    script(src="javascript/listQuery.js") 

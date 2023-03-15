@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(245, 70%, 13%) !important;
+}
+
+h1 {
+  color: hsl(188, 100%, 69%);
+}
+
+#iNumberLimit {
+  outline: none;
+  border: 0.1rem solid hsl(157, 100%, 58%);
+  background: transparent;
+  color: white;
+}
+
+#iNumberLimit::placeholder {
+  color: white;
+}
+
+body table thead {
+  border-bottom: 0.18rem solid hsl(217, 100%, 65%);
+}

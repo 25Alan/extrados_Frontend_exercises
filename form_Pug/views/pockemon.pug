@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    link(rel='stylesheet', href='./css/stylePokemon.css')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC', crossorigin='anonymous')
+
+    title POCKEMON
+  body.d-flex.flex-column.align-items-center.justify-content-center.vh-100.font-monospace
+    h1.fw-bold.fs-1 POCKEMON
+    input#iNumberLimit.mb-3(type='number', placeholder='Enter here the limit to show')
+    table#tablePockemon.w-50.h-50.table.table-dark.table-borderless.table-striped.table-hover.table-sm.fs-5
+      thead.fs-3
+        tr
+          th(scope='col') #
+          th(scope='col') Name
+          th(scope='col') Url
+      tbody#table
+    .containerButton.d-flex.gap-5 
+      button#btnPrev.btn.btn-dark Prev
+      button#btnNext.btn.btn-dark Next
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM', crossorigin='anonymous')
+    script(src='./javascript/scriptPokemon.js', defer='')

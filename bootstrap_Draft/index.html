@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="shortcut icon" href="./images/download.ico" type="image/x-icon">
+
+  <title>Poke App</title>
+</head>
+
+<body class="vw-100 vh-100">
+  <header class="text-primary">
+    <nav class="">
+      <ul class="nav w-100 justify-content-center border-top border-bottom border-warning mt-2">
+        <li class="nav-item"><a href="#" class="nav-link">Search Pokémon</a></li>
+        <li class="nav-item"><a href="./listPokemon.html" class="nav-link">Pokémon List</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container w-100">
+    <section class="d-flex w-100 pt-5 justify-content-center align-items-start gap-1">
+      <input class="form-control rounded-0 rounded-start w-auto ps-2 pe-5 py-1 pb-2 fs-6 text-decoration-none"
+        type="search" id="Isearch" placeholder="Search Your Pokémon" list="pokemonNames" required>
+      <datalist id="pokemonNames"></datalist>
+      <button id="buttonSearch" class="btn btn-outline-warning rounded-0 ">Search</button>
+    </section>
+    <section id="containerShow" class="d-none container border mt-5">
+      <table class="table border shadow">
+      </table>
+    </section>
+  </main>
+
+  <footer class="mw-100 d-flex justify-content-center pt-5">
+    <a href="#" class="text-center text-primary text-decoration-none">Romero Alan</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./script.js" defer type="module"></script>
+</body>
+
+</html>

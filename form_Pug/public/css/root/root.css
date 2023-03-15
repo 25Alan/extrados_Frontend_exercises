@@ -1,0 +1,10 @@
+:root {
+  --bgBody: hsl(0 0% 0%);
+  --bgForm: hsla(0 0% 10%);
+  --inputNameSurname: hsl(0, 0%, 0%, 0.5);
+  --focus: hsl(0, 0%, 35%);
+  --button: hsl(0, 100%, 18%);
+
+  --afterOff: hsl(0, 100%, 50%);
+  --afterOn: hsl(100, 100%, 50%);
+}

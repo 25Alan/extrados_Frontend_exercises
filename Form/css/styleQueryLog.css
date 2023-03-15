@@ -1,0 +1,31 @@
+@import "./root/root.css";
+@import "./root/rootW.css";
+
+.containerList{
+  margin: 4rem 2rem;
+}
+
+.containerList input {
+  background-color: hsl(254, 60%, 48%);
+  color: white;
+  outline: none;
+  border: none;
+  width: 50%;
+  margin: 2rem 0;
+}
+
+.containerList input::placeholder {
+  color: hsl(0, 0%, 78%);
+  text-align: center;
+}
+
+.li {
+  margin: 0.5rem 0;
+  position: relative;
+  width: 100%;
+  font: normal 300 20px/1.5 monospace;
+}
+
+.invisible {
+  display: none;
+}

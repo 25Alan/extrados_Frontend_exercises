@@ -1,0 +1,106 @@
+@import "./root/root.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font:normal 500 16px/1.5 monospace;
+  box-sizing: border-box;
+}
+
+html {
+  background: conic-gradient(from 0deg at 0% 15%, #001020 20%, #142537 30%, #064788 50%);
+}
+
+body {
+  /* background: var(--bgBody); */
+  height: 100vh;
+  width: 100vw;
+}
+
+body header {
+  /* background: linear-gradient(#57128f 70%, #75757507); */
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+img {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.containerNav {
+  height: 100%;
+}
+
+.containerNav ul {
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.containerNav ul li {
+  padding: 0 2rem;
+}
+
+.containerNav ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.containerNav ul li a:after {
+  background-color: hsl(125, 100%, 50%);
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0.2rem;
+}
+
+.containerNav ul li a:hover::after {
+  animation: selectNav 0.5s linear forwards;
+}
+
+@keyframes selectNav {
+  0% { width: 0%; }
+  100% { width: 100%; } 
+}
+
+#checkDarkWhite {
+  align-items: center;
+  display: flex;
+  justify-content: end;
+}
+
+#checkDarkWhite label {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#checkDarkWhite label input {
+  appearance: none;
+}
+
+#checkDarkWhite label span {
+  background: transparent;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+#checkDarkWhite label i {
+  color: hsl(125, 100%, 50%);
+  position: relative;
+}
+
+body main {
+  height: 90%;
+}
