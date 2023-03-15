@@ -51,7 +51,7 @@ table caption {
 }
 
 .winner .box h1 {
-  color: white;
+  color: hsl(0, 0%, 0%);
   position: absolute;
 }
 

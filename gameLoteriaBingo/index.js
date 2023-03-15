@@ -19,7 +19,7 @@ window.onload = () => {
     createCardboard("Check", "Check");
     for(let i = 0; i < inputNumberPlayers.value; i++){
       console.log(checkWinner(i+1));
-      if(checkWinner(i) === 15) console.log(`Ganador: tabla ${i+1}`);
+      if(checkWinner(i) === 15) winner(`Ganador: tabla ${i+1}`);
     }
   });
 };
@@ -98,6 +98,13 @@ function checkWinner(numberTable) {
     if(td.style.backgroundColor === 'rgb(255, 255, 255)') countWhite++;
   });
   return countWhite;
+}
+
+function winner(string) {
+  const winner = document.querySelector('.winner');
+  const h1 = document.querySelector('.winner .box h1');
+  winner.classList.remove('d-none');
+  h1.textContent = string;
 }
 
 const numberRandom = () => { return Math.trunc(Math.random() * (90 - 1) + 1); };
