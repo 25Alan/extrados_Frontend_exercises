@@ -4,7 +4,7 @@
 
 Ejercicio de clonación de la página Pokemon
 
-Modificaciones personales :  
+**Modificaciones personales :**  
 
 - Auto completado en la busqueda de nombres pokemon (usando datalist en html + array con los nombres en js)
 - Falta terminar lógica del filtro
@@ -15,7 +15,7 @@ Modificaciones personales :
 
 Ejercicio de formulario agregando el registro en una lista
 
-Modificaciones personales :
+**Modificaciones personales :**
 
 - Uso de localStorage
 - Falta agregar mini crud en la list
