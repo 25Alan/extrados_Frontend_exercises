@@ -16,7 +16,8 @@ table caption {
 
 #buttonNumberRandom {
   position: absolute;
-  left: 64%; top: 5%;
+  left: 64%;
+  top: 5%;
   font: normal bold 25px/1.5 monospace;
   width: 20%;
   height: 25%;
@@ -32,9 +33,9 @@ table caption {
   background-color: #ffffff;
 }
 
-.winner{
+.winner {
   z-index: 1000;
-  position:absolute;
+  position: absolute;
   inset: 50% 47%;
   transform: translate(-50%, -50%);
   border: none rgb(0, 0, 0) 5px;
