@@ -1,41 +1,41 @@
 import { pokemonInfo } from "./script.js";
 
 const iLimit = document.querySelector("#iLimit");
-const selectFilter = document.querySelector('#selectFilter');
+// const selectFilter = document.querySelector("#selectFilter");
 const sectionContainerList = document.querySelector("#sectionContainerList");
 const textSearchFavorite = document.querySelector("#textSearchFavorite");
 const buttonPrev = document.querySelector("#buttonPrev");
 const buttonNext = document.querySelector("#buttonNext");
-let url = "https://pokeapi.co/api/v2/";
 let currentPage = 1;
 let pageSize = 5;
 
 window.onload = async () => {
-  selectFilter.addEventListener("change", async(event) => {
-    const filter = event.target.value;
-    await updateList(filter);
-  });
+  // selectFilter.addEventListener("change", async(event) => {
+  //   const filter = event.target.value;
+  //   await updateList();
+  // });
   iLimit.addEventListener("input", async () => {
     pageSize = iLimit.value;
     await updateList();
   });
   buttonPrev.addEventListener("click", () => {
     currentPage--;
-    buttonPrev.classList.toggle('d-none', currentPage <= 1);
+    buttonPrev.classList.toggle("d-none", currentPage <= 1);
     updateList();
   });
   buttonNext.addEventListener("click", () => {
     currentPage++;
-    buttonPrev.classList.remove('d-none');
+    buttonPrev.classList.remove("d-none");
     updateList();
   });
+  await updateList();
 };
 
-async function updateList(filter) {
+async function updateList() {
+  let url = "https://pokeapi.co/api/v2/";
   sectionContainerList.innerHTML = "";
   const offset = (currentPage - 1) * pageSize;
-  if (filter === 'all') url += `pokemon/?limit=${pageSize}&offset=${offset}`;
-  else url += `type/${filter}`;
+  url += `pokemon/?limit=${pageSize}&offset=${offset}`; //Acá con el filtro el valor de url varía segun el filtro seleccionado. FALTA COMPLETAR EL FILTRO
   try {
     const response = await fetch(`${url}`);
     const { results } = await response.json();
